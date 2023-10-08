@@ -23,6 +23,7 @@ finishscreen()
 
 JButton ok = new JButton("Done");
 
+
     fram.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     textfield = new JTextField();
     textfield.setFont(myfont);
@@ -43,7 +44,7 @@ panal.setLayout(new GridLayout(1,5));
 ok.setBounds(2,3,40,20);
 ok.setBackground(new Color(50,229,224,62));
 
-ok.addActionListener();
+
  fram.add(panal);
  fram.add(info);
  panal.add(ok);
@@ -58,6 +59,7 @@ panal.setBounds(40,75,250 ,40);
 
     public static void main(String[] args) {
         finishscreen game = new finishscreen();
+
 
     }
 

@@ -1,66 +1,70 @@
 public class flowerbed
 {
-//    public static void main(String[] args) {
-//
-//        int[] bed = {0,1,0,0,0,1};
-//        System.out.println(canPlaceFlowers(bed,1));
-//
-//    }
-//
+    public static void main(String[] args) {
+
+        int[] bed = {0,0,1,0,0,0};
+        System.out.println(canPlaceFlowers(bed,2));
+
+    }
+
 //        public static boolean canPlaceFlowers(int[] flowerbed, int n) {
 //
 //
 //            int i = 0  , counter = 0 ;
-//            while(n != 0 && i < flowerbed.length)
+//            while(i < flowerbed.length)
 //            {
-//                while(flowerbed[i] != 1 && i < flowerbed.length )
-//                {
-//                    counter++;
-//                    if(counter == 3)
-//                    {
+//                if(i == 0 ) {
+//                    if (flowerbed[0] == 0 && flowerbed[1] == 0) {
 //                        n--;
-//                       i = i +counter;
-//                       counter = 0;
+//                        i++;
+//                        continue;
+//                    }
+//                }
+//                    while (  i < flowerbed.length && flowerbed[i] == 0)
+//                    {
+//                        counter++;
+//                        i++;
+//                        if(counter == 3)
+//                        {
+//                            n--;
+//                            counter = 0;
+//                            i++;
+//                        }
 //
 //                    }
 //
-//                }
 //                i++;
-//
-//
-//
+//                    counter = 0;
 //            }
-//            if( n >0 )
-//            {
-//                return false;
-//            }
-//            else return true;
+//
+//
+//
+//
+//
+//
+//            return n <=0;
 //        }
 
 
 
 
-    public static void main(String[] args) {
-        int[] bed = {0, 1, 0, 0, 1, 1};
-        System.out.println(canPlaceFlowers(bed, 1));
-    }
-
-    public static boolean canPlaceFlowers(int[] flowerbed, int n) {
-        int i = 0, counter = 0;
-        while (i < flowerbed.length) {
-            while (i < flowerbed.length && flowerbed[i] == 1) {
-                i += 2;
-            }
-            while (i < flowerbed.length && flowerbed[i] == 0) {
-                counter++;
-                if (counter == 2) {
+        public static boolean canPlaceFlowers(int[] flowerbed, int n) {
+            int i = 0, counter = 0;
+            while (i < flowerbed.length) {
+                if ((i == 0 || flowerbed[i - 1] == 0) && flowerbed[i] == 0 && (i == flowerbed.length - 1 || flowerbed[i + 1] == 0)) {
+                    flowerbed[i] = 1;
                     n--;
-                    counter = 0;
+                    counter = 1; // Set counter to 1 as the current position is occupied
+                } else {
+                    counter = 0; // Reset counter if the current position cannot be used for planting
                 }
-                i += 2;
+                i++;
             }
+            return n <= 0;
         }
-        return n <= 0;
-    }
+
+
+
+
 
 }
