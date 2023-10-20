@@ -100,6 +100,7 @@ public static void sorter(int[] arr)
             s++;
 
         }
+
         while (arr[e]% 2 == 0)
         {
             e--;

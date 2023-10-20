@@ -2,8 +2,9 @@ public class Substring
 {
     public static void main(String[] args) {
         String q = "abc";
-        String qb = "eajbksc";
-int c = 0;
+        String qb = "eajksc";
+
+
         int i  = 0, j = 0;
         while(i < q.length() && j < qb.length())
         {
@@ -11,13 +12,13 @@ int c = 0;
             {
                 i++;
                 j++;
-                c++;
+
             }
             else {
                 j++;
             }
         }
-        if(i == c)
+        if(i == q.length())
         {
             System.out.println("True");
         }
